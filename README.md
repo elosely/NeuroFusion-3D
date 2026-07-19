@@ -1,4 +1,4 @@
-🧠 NeuroFusion 3D: A Multimodal Clinical Decision Support System for Brain Tumor Segmentation
+# 🧠 NeuroFusion 3D: A Multimodal Clinical Decision Support System for Brain Tumor Segmentation
 
 NeuroFusion 3D is an advanced Multimodal Medical Imaging prototype developed as a **Clinical Decision Support System (CDSS)** and a **Preoperative Visualization tool** for brain tumor analysis. The system focuses on fusing spatial features from **3D Volumetric MRI scans** with semi-structured **Clinical Text Reports** to assist in tumor localization, volumetric mass calculation, and diagnostic insight generation.
 
@@ -61,18 +61,15 @@ NeuroFusion-3D/
     ├── loss_curves.png
     ├── raw_mri.png
     └── segmented_mri.png
-## 🔧 Installation & Execution
-## 1.Clone & Navigate:
-
-```Bash
+🔧 Installation & Execution
+1. Clone & Navigate
+Bash
 git clone [https://github.com/elosely/NeuroFusion-3D.git](https://github.com/elosely/NeuroFusion-3D.git)
 cd NeuroFusion-3D
-Install Dependencies:
-
+2. Install Dependencies
 Bash
 pip install torch torchvision torchaudio monai numpy matplotlib streamlit transformers nibabel pandas
-Generate Assets & Run Dashboard:
-
+3. Generate Assets & Run Dashboard
 Bash
 python generate_report.py
 streamlit run app.py
