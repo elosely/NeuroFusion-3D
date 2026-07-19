@@ -1,61 +1,199 @@
-# NeuroFusion 3D: A Multimodal Clinical Decision Support System
+# 🧠 NeuroFusion 3D
+### A Multimodal Clinical Decision Support System for Brain Tumor Segmentation and Preoperative Visualization
 
-NeuroFusion 3D is a Multimodal Medical Imaging prototype developed as a Clinical Decision Support System (CDSS) and a Preoperative Visualization tool for brain tumor analysis.
+NeuroFusion 3D is a research-oriented Medical AI prototype developed as a **Clinical Decision Support System (CDSS)** for brain tumor analysis.
 
----
+The system combines volumetric **3D MRI** imaging with **Clinical Text Reports** using a multimodal deep learning architecture to support tumor segmentation, volumetric assessment, AI-assisted clinical interpretation, and interactive 3D visualization.
 
-## UI & Visual Assets
-
-| Raw Structural MRI Slice | 3D Segmentation Overlay |
-|---|---|
-| ![Raw Slice](docs/raw_mri.png) | ![Segmented Slice](docs/segmented_mri.png) |
-
-![Training & Validation Performance](docs/loss_curves.png)
+> **Disclaimer**
+>
+> This project is intended exclusively for research and educational purposes. It is not approved for clinical diagnosis or medical decision-making.
 
 ---
 
-## Evaluation Strategy
+# Key Features
 
-The 3D segmentation module is based on a 3D U-Net architecture implemented with MONAI and PyTorch. The network optimizes a Hybrid Loss Function: Dice Loss + Cross-Entropy Loss.
+- 3D volumetric MRI preprocessing using MONAI
+- 3D U-Net semantic segmentation
+- Multimodal fusion of MRI and clinical reports
+- DistilBERT clinical text encoder
+- Interactive Streamlit dashboard
+- Automated tumor volume estimation
+- AI-assisted clinical report generation
+- Modular research-oriented architecture
 
 ---
 
-## Data Flow Diagram
+# System Architecture
 
-[ 3D Volumetric MRI ] ---> (3D U-Net Encoder) ---> [ Spatial Features ] --->
-                                                                           [ Multimodal Fusion Layer ] ---> [ Streamlit Dashboard ]
-[ Clinical Text Report ] ---> (DistilBERT Encoder) ---> [ Text Embeddings ] --->
+```
+                    3D MRI Volume
+                          │
+                    Preprocessing
+                          │
+                    MONAI Pipeline
+                          │
+                     3D U-Net Encoder
+                          │
+                  Spatial Feature Maps
+                          │
+                          ├──────────────────────┐
+                          │                      │
+                          │                      ▼
+                          │            Clinical Report
+                          │                      │
+                          │                DistilBERT
+                          │                      │
+                          │               Text Embeddings
+                          └──────────────┬───────┘
+                                         │
+                                 Multimodal Fusion
+                                         │
+                              Classification Head
+                                         │
+                          Tumor Segmentation + Report
+                                         │
+                              Streamlit Dashboard
+```
 
 ---
 
-## Repository Structure
+# Technologies
 
+| Category | Technology |
+|----------|------------|
+| Programming Language | Python |
+| Deep Learning | PyTorch |
+| Medical Imaging | MONAI |
+| NLP | Hugging Face Transformers (DistilBERT) |
+| Medical Image Handling | NiBabel |
+| Numerical Computing | NumPy |
+| Visualization | Matplotlib |
+| Dashboard | Streamlit |
+
+---
+
+# Evaluation Strategy
+
+The current repository represents the complete software architecture of the proposed system.
+
+Performance metrics will be reported after model training on an appropriate research dataset.
+
+The segmentation model is configured to optimize a Hybrid Loss Function:
+
+- Dice Loss
+- Cross Entropy Loss
+
+The following evaluation metrics are planned:
+
+- Dice Similarity Coefficient (DSC)
+- Intersection over Union (IoU)
+- Precision
+- Recall
+- F1-Score
+- Hausdorff Distance (95HD)
+- Average Symmetric Surface Distance (ASSD)
+- ROC-AUC (Classification)
+- Confusion Matrix
+
+---
+
+# Target Dataset
+
+The pipeline is designed to support publicly available multimodal brain tumor datasets such as:
+
+- BraTS
+- BraTS 2023
+- BraTS 2024
+
+Supported MRI modalities include:
+
+- T1
+- T1ce
+- T2
+- FLAIR
+
+---
+
+# Repository Structure
+
+```
 NeuroFusion-3D/
-├── app.py                     # Main Streamlit Dashboard
-├── train.py                   # Core PyTorch/MONAI training loop
-├── generate_report.py         # Utility script for assets
-├── requirements.txt           # Project dependencies
-└── docs/                      # UI Screenshots and plots
+│
+├── app.py
+├── train.py
+├── inference.py
+├── build_model.py
+├── multimodal_fusion.py
+├── prepare_pipeline.py
+├── utils/
+├── docs/
+│   ├── dashboard.png
+│   ├── segmentation.png
+│   ├── architecture.png
+│   └── training_curves.png
+├── requirements.txt
+├── LICENSE
+└── README.md
+```
 
 ---
 
-## Installation & Execution
+# Installation
 
-1. Clone the repository:
+```bash
 git clone https://github.com/elosely/NeuroFusion-3D.git
+
 cd NeuroFusion-3D
 
-2. Install Dependencies:
-pip install torch torchvision torchaudio monai numpy matplotlib streamlit transformers nibabel pandas
-
-3. Generate Assets & Run Dashboard:
-python generate_report.py
-streamlit run app.py
+pip install -r requirements.txt
+```
 
 ---
 
-## Developer Context
+# Run
 
-* Youssef Elosely
-* Medical Biophysics Department, Faculty of Science.
-* Focus Area: Computer Vision in Radiotherapy Planning & AI-Driven Medical Imaging.
+```bash
+python train.py
+
+streamlit run app.py
+```
+
+---
+
+# Future Work
+
+- Explainable AI (Grad-CAM)
+- DICOM support
+- Multi-class tumor classification
+- Longitudinal patient follow-up
+- PDF clinical report generation
+- Docker deployment
+- REST API integration
+- PACS compatibility
+- Federated Learning
+- Cloud deployment
+
+---
+
+# Developer
+
+**Youssef Elosely**
+
+Medical Biophysics Student
+
+Faculty of Science
+
+Focus Areas:
+
+- Medical Imaging
+- Artificial Intelligence
+- Computer Vision
+- Medical Physics
+- Biomedical Signal & Image Processing
+
+---
+
+# License
+
+This project is released under the MIT License.
