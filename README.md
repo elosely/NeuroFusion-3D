@@ -61,10 +61,10 @@ NeuroFusion-3D/
     ├── loss_curves.png
     ├── raw_mri.png
     └── segmented_mri.png
-🔧 Installation & Execution
-Clone & Navigate:
+## 🔧 Installation & Execution
+## 1.Clone & Navigate:
 
-Bash
+```Bash
 git clone [https://github.com/elosely/NeuroFusion-3D.git](https://github.com/elosely/NeuroFusion-3D.git)
 cd NeuroFusion-3D
 Install Dependencies:
