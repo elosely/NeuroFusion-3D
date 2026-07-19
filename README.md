@@ -24,6 +24,64 @@ The system combines volumetric **3D MRI** imaging with **Clinical Text Reports**
 
 ---
 
+# User Interface & Visual Assets
+
+## Interactive Dashboard
+
+The Streamlit dashboard provides real-time visualization of volumetric MRI scans, segmentation masks, tumor measurements, and AI-assisted clinical reports.
+
+![Dashboard](docs/dashboard.png)
+
+---
+
+## Segmentation Results
+
+| Raw MRI Slice | Predicted Tumor Segmentation |
+|---------------|------------------------------|
+| ![](docs/raw_slice.png) | ![](docs/segmented_slice.png) |
+
+---
+
+## 3D Brain Reconstruction
+
+Interactive visualization of the reconstructed brain volume with segmented tumor regions.
+
+![3D Reconstruction](docs/brain_3d.png)
+
+---
+
+## Clinical Report Generation
+
+Automatically generated AI-assisted clinical report.
+
+![Clinical Report](docs/report.png)
+
+---
+
+## Training Performance
+
+### Training & Validation Loss
+
+![Loss Curves](docs/loss_curves.png)
+
+### Validation Metrics
+
+| Metric | Result |
+|---------|-------:|
+| Dice Similarity Coefficient | *To be reported* |
+| IoU | *To be reported* |
+| Precision | *To be reported* |
+| Recall | *To be reported* |
+| F1 Score | *To be reported* |
+
+---
+
+## System Architecture
+
+![Architecture](docs/architecture.png)
+
+---
+
 # System Architecture
 
 ```
