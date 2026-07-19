@@ -64,16 +64,6 @@ Automatically generated AI-assisted clinical report.
 
 ![Loss Curves](docs/loss_curves.png)
 
-### Validation Metrics
-
-| Metric | Result |
-|---------|-------:|
-| Dice Similarity Coefficient | *To be reported* |
-| IoU | *To be reported* |
-| Precision | *To be reported* |
-| Recall | *To be reported* |
-| F1 Score | *To be reported* |
-
 ---
 
 ## System Architecture
